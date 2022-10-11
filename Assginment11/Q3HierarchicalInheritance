@@ -1,0 +1,116 @@
+/*Q3.WAP to accept no from the user and perform the different types of Operator.*/
+
+package inherit;
+
+import java.util.Scanner;
+
+public class Accept_val 
+{
+	 static int num, num1,num2,num3;
+	public static void accept()
+	{
+	
+	 Scanner in=new Scanner(System.in);
+	 System.out.println("Enter num1 number:");
+	 num1=in.nextInt();
+	 System.out.println("Enter num2 number:");
+	 num2=in.nextInt();
+	 System.out.println("Enter num3 number:");
+	 num3=in.nextInt();
+	}
+	public static void accept1()
+	{
+	
+	 Scanner in=new Scanner(System.in);
+	 System.out.println("Enter num number:");
+	 num=in.nextInt();
+	}
+	public static void accept2()
+	{
+	
+	 Scanner in=new Scanner(System.in);
+	 System.out.println("Enter num1 number:");
+	 num1=in.nextInt();
+	 System.out.println("Enter num2 number:");
+	 num2=in.nextInt();
+	}
+}
+
+package inherit;
+
+public class Arithimetic extends Accept_val {
+	public static void arthi()
+	{
+		accept();
+		System.out.println("\nArithmetic Operators");
+        System.out.println("Addition = "+(num1+num2));
+        System.out.println("Substraction = "+(num1-num2));
+        System.out.println("Multiplication = "+(num1*num2));
+        System.out.println("Division = "+(num1/num2));
+       
+	}
+	
+}
+package inherit;
+
+public class Unary_op extends Accept_val {
+	public static void unary()
+	{
+		accept1();
+		System.out.println("\nUnary Operators");
+        System.out.println("\n number after increamentation is "+(num++));
+        System.out.println("\n number after decreamentation is "+(num--));
+	}
+}
+package inherit;
+
+public class Ternary extends Accept_val {
+	public static void ternary_op()
+	{
+		accept2();
+		System.out.println("Ternary operator");
+		System.out.println("\nthe greater number is"+(num1>num2?num1:num2));
+	}
+
+}
+package inherit;
+
+public class Logical extends Accept_val 
+{
+	public static void logical_Op()
+	{
+		accept();
+		System.out.println("logical operator");
+		System.out.println("Logical And (&&)  "); //if both condition is true then and only then loop will executed
+	     if(num1>num2 && num1>num3)
+	     {
+	    	 System.out.println(num1+" is greater ");
+	     }
+	     else if(num2>num3)
+	     {
+	    	 System.out.println(num2+" is greater ");
+	     }
+	     else
+	    	 System.out.println(num3+" is greater ");
+	     
+	    
+
+}
+}
+package inherit;
+import java.util.*;
+public class Main_call extends Accept_val {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 Arithimetic obj1 = new Arithimetic ();
+		 Unary_op obj2 = new Unary_op();
+		 Ternary obj3 =new Ternary();
+		 Logical obj4 = new Logical();
+		 obj1.arthi();
+		 obj2.unary();
+		 obj3.ternary_op();
+		 obj4.logical_Op();
+	}
+
+}
