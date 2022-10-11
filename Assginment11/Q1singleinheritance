@@ -1,0 +1,62 @@
+//Q1.WAP to create two class one class do the process of fibonacci series and in second class
+//find out the graeter between two no . From second class display both the operation.
+
+package inherit;
+
+import java.util.Scanner;
+
+public class Single_inherit {
+	
+		
+		static int n ;
+		public static void fib()
+		{
+			 int num1 = 0, num2 = 1;
+			 Scanner sc=new Scanner(System.in);
+				System.out.println("Enter Fibonacci Series till n terms:");
+				n=sc.nextInt();
+		    for (int i = 1; i <= n; ++i) {
+		      System.out.print(num1 + ", ");
+
+		      // compute the next term
+		      int next_num = num1 + num2;
+		      num1 = num2;
+		      num2 = next_num;
+		    }
+		  
+			
+		}
+		
+
+	}
+
+
+package inherit;
+
+import java.util.Scanner;
+
+public class Greater extends Single_inherit {
+	public static void main(String args[]) 
+	{
+		fib();
+		greater();
+	}
+	public static void greater()
+	{
+		int num1,num2;
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("\nEnter Two Numbers");
+		num1=sc.nextInt();
+		num2=sc.nextInt();
+		if(num1>num2)
+		{
+			System.out.println("Num1 is grteater="+num1);
+		}
+		else
+		{
+			System.out.println("NUM2 is greater="+num2);
+		}
+	}
+		
+}
