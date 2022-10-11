@@ -1,0 +1,106 @@
+/*WAP to crate three class, one class implemet the prime no prcess , second class implement the swapping
+ *  of two no, third class imepelment the find out the average of student marks.
+ * */
+
+package inherit;
+
+import java.util.Scanner;
+
+public class Prime_no {
+	public static void prime()
+	{
+	int num, i, count=0;
+    Scanner s = new Scanner(System.in);
+    
+    System.out.print("Enter a Number: ");
+    num = s.nextInt();
+    
+    for(i=2; i<num; i++)
+    {
+       if(num%i == 0)
+       {
+          count++;
+          break;
+       }
+    }
+    
+    if(count==0)
+       System.out.println("\nIt is a Prime Number.");
+    else
+       System.out.println("\nIt is not a Prime Number.");
+	}
+
+}
+
+
+package inherit;
+
+import java.util.Scanner;
+
+public class Swapping extends Prime_no {
+	public static void swap() 
+	{
+		int num1 = 0,num2 = 0;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("\nEnter num1=");
+		num1=sc.nextInt();
+		System.out.println("\nEnter num2=");
+		num2=sc.nextInt();
+		int temp = num1;
+        num1 = num2;
+        num2 = temp;
+        System.out.println("\nValue of num1 is= " + num1
+                           + " and Value of num is= " + num2);
+	}
+
+}
+package inherit;
+
+import java.util.Scanner;
+
+public class Student_mark extends Swapping {
+public static void main(String args[])
+{
+	prime();
+	swap();
+	avg();
+}
+
+
+public static void avg()
+{
+	int i;
+	 
+    System.out.println("\nEnter number of subjects:");
+ 
+    Scanner sc=new Scanner(System.in);
+ 
+    int n=sc.nextInt();
+ 
+    int[] a=new int[n];
+ 
+    double avg=0;
+ 
+    System.out.println("\nEnter marks");
+ 
+    for( i=0;i<n;i++)
+    {
+       a[i]=sc.nextInt();
+    }
+ 
+    for( i=0;i<n;i++)
+    {
+      avg=avg+a[i];
+    }
+ 
+    System.out.print("\nAverage of (");
+ 
+    for(i=0;i<n-1;i++)
+    {
+      System.out.print(a[i]+",");
+    }
+    System.out.println(a[i]+") ="+avg/n);
+  }
+	
+}
+
