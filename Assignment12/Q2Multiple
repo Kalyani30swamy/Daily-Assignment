@@ -1,0 +1,82 @@
+/*WAP to calculate the rate of intrest of different bank by usinh Multiple inheritance.*/
+package Inheritance;
+
+public interface HDFC_Bank 
+{
+	public void hdfc_rate();
+	
+}
+
+package Inheritance;
+
+public interface SBI_bank {
+	public void sbi_rate();
+
+}
+package Inheritance;
+
+public interface Axis_bank {
+	public void axis_rate();
+
+}
+package Inheritance;
+
+import java.util.Scanner;
+
+public class Rate_of_interest implements HDFC_Bank,SBI_bank,Axis_bank
+{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Rate_of_interest obj1 = new Rate_of_interest();
+		obj1.hdfc_rate();
+		obj1.sbi_rate();
+		obj1.axis_rate();
+	}
+
+	@Override
+	public void hdfc_rate() 
+	{
+		// TODO Auto-generated method stub
+		 System.out.println("Welcome to HDFC Bank");
+		float p, t, si=600,ri;
+		Scanner in=new Scanner(System.in);
+		System.out.println("Enter principal :");
+		p=in.nextInt();
+		System.out.println("Enter time :");
+		t=in.nextInt();
+		ri = (si * 100)/(p * t);
+		System.out.println("rate of interest is :"+ri+"%");
+	}
+
+	@Override
+	public void sbi_rate() 
+	{
+		// TODO Auto-generated method stub
+		System.out.println("\nWelcome to SBI Bank");
+		float p, t, si=1000,ri;
+		Scanner in=new Scanner(System.in);
+		System.out.println("Enter principal :");
+		p=in.nextInt();
+		System.out.println("Enter time :");
+		t=in.nextInt();
+		ri = (si * 100)/(p * t);
+		System.out.println("rate of interest is :"+ri+"%");
+	}
+
+	@Override
+	public void axis_rate()
+	{
+		// TODO Auto-generated method stub
+		System.out.println("\nWelcome to Axis Bank");
+		float p, t, si=700,ri;
+		Scanner in=new Scanner(System.in);
+		System.out.println("Enter principal :");
+		p=in.nextInt();
+		System.out.println("Enter time :");
+		t=in.nextInt();
+		ri = (si * 100)/(p * t);
+		System.out.println("rate of interest is :"+ri+"%");
+	}
+
+}
