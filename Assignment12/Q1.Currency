@@ -1,0 +1,64 @@
+/*WAP to convert the currency by using interface.
+*/
+
+package Inheritance;
+
+public interface Currency_demo 
+{
+	public void currency();
+}
+
+package Inheritance;
+
+import java.util.Scanner;
+
+public class Rupees_con implements Currency_demo {
+
+		public static void main(String[] args)
+		{
+		// TODO Auto-generated method stub
+			Rupees_con obj=new Rupees_con();
+			obj.currency();
+	}
+
+		@Override
+		public void currency() {
+			// TODO Auto-generated method stub
+			Scanner sc = new Scanner(System.in);
+	        
+	        System.out.println("Enter the Amount in USD: ");
+	        double USD = sc.nextDouble();
+	        
+	        double INR = 70 * USD;
+	        
+	        System.out.println(""+USD+" USD in INR is equal to Rs "+INR);
+		}
+		
+}
+
+package Inheritance;
+
+import java.util.Scanner;
+
+public class Dollar_con implements Currency_demo
+{
+	public static void main(String[] args)
+	{
+	Dollar_con obj=new Dollar_con();
+	obj.currency();
+}
+
+	@Override
+	public void currency() {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the Amount in Rupees: ");
+        double Rupees = sc.nextDouble();
+        
+        double INR =  Rupees / 70;
+        
+        System.out.println(""+Rupees+" Rupees in INR is equal to Dollar "+INR);
+	}
+
+}
