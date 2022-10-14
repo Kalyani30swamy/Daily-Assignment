@@ -1,0 +1,115 @@
+package Encapsulation;
+
+import java.util.Scanner;
+
+public class Bank_process
+{
+	private int pass=12345;
+	private int ac_bal=100;
+	char ans;
+	//Creating getter setter methods to access private variables in other class
+	public int getPass()
+	{
+		return pass;
+	}
+	public void setPass(int ps)
+	{
+		this.pass = ps;
+	}
+	public int getAc_balcredit() 
+	{
+		return ac_bal;
+	}
+	public void setAc_balcredit(int balance) 
+	{
+		this.ac_bal += balance;
+	}
+	public int getAc_baldebit()
+	{
+		return ac_bal;
+	}
+	public void setAc_baldebit(int balance) 
+	{
+		this.ac_bal -= balance;
+	          
+	}  
+}
+
+package Encapsulation;
+
+import java.util.Scanner;
+
+public class Bank extends Bank_process
+{
+
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub									
+				String u_id,bankname;
+				char ans;
+				int u_pass,u_bal,ch,balance = 0;
+				Bank ob = new Bank();
+				Scanner sc = new Scanner(System.in);
+				System.out.println("Enter Bank name= ");
+				bankname=sc.next();
+				System.out.println("Enter User name= ");
+				u_id=sc.next();
+				System.out.println("Enter Account Password=");
+				u_pass=sc.nextInt();
+				ob.getPass();
+				//if block to check password
+				if(ob.getPass()==u_pass) 
+				{							
+				do				
+					{
+					System.out.println("Do you want to\n1. Credit\n2. Debit");
+					ch=sc.nextInt();						
+					switch (ch) 
+					{
+					case 1:
+						System.out.println("Enter Amount you want to Credit");
+						balance=sc.nextInt();
+						ob.setAc_balcredit(balance);
+						System.out.println("The Username is "+u_id);
+						System.out.println("The Bankname is "+bankname);
+						System.out.println("The Account balance is Rs."+ob.getAc_balcredit());
+						break;
+					case 2:
+						System.out.println("Enter Amount you want to Debit");
+						balance=sc.nextInt();
+						ob.setAc_baldebit(balance);
+						if (ob.getAc_baldebit()>=0)
+						{
+							System.out.println("The Username is "+u_id);
+							System.out.println("The Bankname is "+bankname);
+							System.out.println("The Account balance is Rs."+ob.getAc_baldebit());
+						}
+						else 
+						{
+							System.out.println("The Bank Account does not have Sufficient Funds to Withdraw");
+						}
+						
+						break;
+
+					default:
+					System.out.println("Enter Valid Input");
+					break;
+					}
+						System.out.println("Do you want to continue transaction? y/n");
+						ans=sc.next().charAt(0);
+					}
+				while(ans=='Y'||ans=='y');
+				}
+				else
+				{
+					System.out.println("Sorry you entered wrong password ");
+				}
+				System.out.println("Thanku for coming");
+			
+		}
+}
+
+		
+	
+
+
