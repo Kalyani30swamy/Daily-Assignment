@@ -1,0 +1,95 @@
+/*WAP using interface to create a process where you have to do the following process:
+1:Display the Basic info of an employee (name,phno,email,address,DOB)
+2:Display the Details of emp_info (Emp_id,dep,des,location,salary)
+
+Interface 1 method ()
+
+2 class same interface
+
+1 st class(Basic info)
+2 nd class(EMP Info)*/
+package Abraction;
+
+public interface Emp_interface
+{
+	public void method();
+}
+
+package Abraction;
+
+import java.util.Scanner;
+
+public class Basic_info_emp implements Emp_interface {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub						
+		Basic_info_emp obj =new Basic_info_emp();
+		obj.method();
+	}
+	@Override
+	public void method() {
+		// TODO Auto-generated method stub		
+		String name,email_id,address,M;
+		int D,Y; 
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter name of emp:");
+		name=sc.next();
+		System.out.println("enter email_id of emp:");
+		email_id=sc.next();
+		System.out.println("enter employee address:");
+		address=sc.next();
+		System.out.println("enter Birth_Date of emp:");
+		D=sc.nextInt();
+		System.out.println("enter Birth_Month of emp:");
+		M=sc.next();
+		System.out.println("enter Birth_Y of emp:");
+		Y=sc.nextInt();
+		System.out.println("name of employee = "+name);
+		System.out.println("email_id of employee = "+email_id);
+		System.out.println("address of employee = "+address);
+		System.out.println("DOB of employee = "+D+"-"+M+"-"+Y);
+	}
+
+}
+
+package Abraction;
+
+import java.util.Scanner;
+
+public class Emp_info implements Emp_interface
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Emp_info obj = new Emp_info();
+		obj.method();
+		
+	}
+
+	@Override
+	public void method()
+	{
+		// TODO Auto-generated method stub
+		int emp_id,salary;
+		String department,designation,location;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter employee_id:");
+		emp_id=sc.nextInt();
+		System.out.println("enter Department:");
+		department=sc.next();
+		System.out.println("enter designation of emp:");
+		designation=sc.next();
+		System.out.println("enter current location of employee office:");
+		location=sc.next();
+		System.out.println("enter salary of emp:");
+		salary=sc.nextInt();
+		System.out.println("employee_id = "+emp_id);
+		System.out.println("Department of employee = "+department);
+		System.out.println("Designation of employee = "+designation);
+		System.out.println("current location of employee office= "+location);
+		System.out.println("salary of employee = "+salary);
+	}
+
+}
