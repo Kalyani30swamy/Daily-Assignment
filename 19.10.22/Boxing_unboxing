@@ -1,0 +1,53 @@
+package Garbage_collection;
+
+import java.util.Scanner;
+
+public class Boxing_unboxing 
+{
+	static Scanner sc=new Scanner(System.in);
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+		Box();
+		Unbox();
+	}	
+			
+	public static void Box()
+	{
+		System.out.println("This is the box method ");
+		System.out.println("Enter a number");
+		int num=sc.nextInt();	
+		System.out.println("The number is ="+num);		
+		Integer it1=new Integer(num);		
+		System.out.println("The value is ="+it1);
+		if(it1>0) 
+		{
+			System.out.println("The number is positive.");
+		}
+		else
+		{
+			System.out.println("The number is negative.");  
+		}
+		
+	}
+	public static void Unbox()
+	{
+		
+		System.out.println("\nThis is the wrapper class");
+		System.out.println("Enter the number for wrapper clas:");
+		Integer obj=sc.nextInt();
+		int num=obj;
+		for (int i= 0; i<obj; i++)
+		{}
+		if(obj% 3 == 0)
+		{
+	         System.out.println("Given number is divisible by 3");
+	      } else
+	      {
+	         System.out.println("Given number is not divisible by 3");
+	      }	 
+		
+		
+	}
+
+}
