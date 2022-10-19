@@ -1,0 +1,179 @@
+import java.util.Scanner;
+
+public class Exception 
+{
+	static Scanner sc =new Scanner(System.in);
+	public static void main(String[] args) 
+	{
+			// TODO Auto-generated method stub
+			//declare variables
+			int menu_item,menu1,i_price=0,q=0;
+			char ans;		  
+			String i_name="";							
+			Scanner sc=new Scanner(System.in);		
+			//using do while loop
+			  do
+			  {
+			   System.out.println("Menu:\n1:.try catch\n2:try catch finally \n3:nested try catch \n4:multiple catch block");
+			   menu_item=sc.nextInt();					
+			   //using switch case to get main choice
+			   switch(menu_item)
+			   {
+			   case 1:
+				   System.out.println("1:This the try catch");
+				   try
+				   {
+					   int num1,num2,res;
+					   System.out.println("Enter the num1:");					   
+					   num1=sc.nextInt();
+					   System.out.println("Enter the num2:");
+					   num2=sc.nextInt();				   
+					   res=num1/num2;
+					   System.out.println("the result::"+res);					   					   
+				   }
+				   	catch(ArithmeticException e)
+				   {
+				   		System.out.println("You should not divide a number by zero");
+				   }
+				   break;
+			   case 2:
+				   System.out.println("1:This the try catch finally");
+				   int size;
+				   try
+				   {
+				   System.out.print("Enter numbers you want in array:");		//enter user choice array
+			        size = sc.nextInt();									
+			        int a[] = new int[size];
+				   
+				   System.out.println("Enter all the numbers:");			//enter user number
+				   for (int i = 0; i < size; i++) 
+				   	{
+					   a[i] = sc.nextInt();
+					   a[size+1]=45;
+				   	}
+				   }
+				   catch(ArrayIndexOutOfBoundsException e)
+					{
+						System.out.println("The array size is greater than its declared size");
+					}
+				   finally
+					{
+						System.out.println("this is my finally");
+					}
+				   break;
+			   case 3:
+				   System.out.println("1:This is the nested try catch");
+				   try
+				   {
+					   int num1,num2,res;					  					   
+					   System.out.println("Enter the num1:");
+					   num1=sc.nextInt();
+					   System.out.println("Enter the num2:");
+					   num2=sc.nextInt();
+					   res=num1/num2;
+					   System.out.println("the result::"+res);					   					   
+				   }	
+				   catch(ArithmeticException e)
+				   {
+				   		System.out.println("You should not divide a number by zero");
+				   }
+				   try 
+				   {
+					   System.out.print("Enter numbers you want in array:");		//enter user choice array
+				        size = sc.nextInt();									// to scan the next word of the input as an int
+				        int a[] = new int[size];
+					   
+					   System.out.println("Enter all the numbers:");			//enter user number
+					   for (int i = 0; i < size; i++) 
+					   	{
+						   a[i] = sc.nextInt();
+						   a[size+1]=45;
+					   	}
+					   }
+					   catch(ArrayIndexOutOfBoundsException e)
+						{
+							System.out.println("The array size is greater than its declared size");
+						}
+					   		
+				   
+				   try
+				   {
+					   String name;
+					   System.out.println("enter the name:");
+					   name=sc.next();
+					   System.out.println("the name is="+name.hashCode());
+				   }
+				   catch(NullPointerException n)
+					{
+						System.out.println("The name cannot be null");					
+				    }
+				   try {
+					   System.out.println("\nThere is the null value for name in this try catch block ");
+					   String name1;
+					   name1=null;					   
+					   System.out.println("the name is="+name1.hashCode());								   
+					     
+				   }
+					catch(NullPointerException n)
+					{
+						System.out.println("The name cannot be null");					
+				    }
+				   finally
+					{
+						System.out.println("this is my finally");
+					}
+				   
+				   break;
+			   case 4:
+				   System.out.println("This is the multiple catch block");
+				   try{    
+					   int[] arr=new int[5];
+						
+						arr[14]=67;
+						int i;
+						for(i=0;i<5;i++)
+						{
+							System.out.println("array="+arr[i]);
+						}
+		               }    
+		               catch(ArithmeticException e)  
+		                  {  
+		                   System.out.println("Arithmetic Exception occurs");  
+		                  }    
+		               catch(ArrayIndexOutOfBoundsException e)  
+		                  {  
+		                   System.out.println("ArrayIndexOutOfBounds Exception occurs");  
+		                  }    		               
+		               System.out.println("rest of the code");
+		              try
+		              {
+		            	  int arr[] = new int[6]; 
+		            	  arr[3] = 20/0; 
+		            	  
+		              }
+		              catch(ArrayIndexOutOfBoundsException e)
+		              {
+		            	  System.out.println("Accessing array element outside of specified limit");  
+		              }
+		              catch(ArithmeticException e)
+		              {
+		            	  System.out.println("Arithmetic Exception occurs");
+		              }
+		              finally
+						{
+							System.out.println("this is my finally");
+						}              
+		               
+		               break;
+			   default:
+				     System.out.println("Invalid choice");
+			   }
+			   System.out.println("Do you want to continue y/n");
+			   ans=sc.next().charAt(0);	
+			  }
+			  while(ans=='Y'||ans=='y');
+			  System.out.println("Thanks for coming");
+	}
+}
+
+
