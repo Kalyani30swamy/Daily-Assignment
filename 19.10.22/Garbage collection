@@ -1,0 +1,41 @@
+package Garbage_collection;
+
+import java.util.Scanner;
+
+public class Garbage_demo 
+{
+	int num1,num2;
+	public void finalize()
+	{
+		System.out.println("This is MY GC METHOD");
+	}
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Garbage_demo obj = new Garbage_demo();
+		Garbage_demo obj1 = new Garbage_demo();
+		obj=null;
+		obj1.greater();		
+		System.gc();
+		
+	}
+	
+	
+	public void greater()
+	{
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Two Numbers:");
+		num1=sc.nextInt();
+		num2=sc.nextInt();
+		
+		if(num1>num2)
+		{
+			System.out.println(num1+"is greater");
+		}
+		else 
+		{
+			System.out.println(num2+"is greater");
+		}		
+	}
+
+}
