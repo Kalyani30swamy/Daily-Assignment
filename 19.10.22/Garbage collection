@@ -13,9 +13,8 @@ public class Garbage_demo
 	{
 		// TODO Auto-generated method stub
 		Garbage_demo obj = new Garbage_demo();
-		Garbage_demo obj1 = new Garbage_demo();
+		obj.greater();	
 		obj=null;
-		obj1.greater();		
 		System.gc();
 		
 	}
