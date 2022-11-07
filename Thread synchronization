@@ -1,0 +1,87 @@
+package Thread;
+
+public class Demo1 
+{
+	 static int total = 100;   
+	    static synchronized void Demo2(String name,
+	                                       int withdrawal)
+	    {
+	        if (total >= withdrawal) {
+	            System.out.println(name + " withdrawn "
+	                               + withdrawal);
+	            total = total - withdrawal;
+	            System.out.println("Balance after withdrawal: "
+	                               + total);	           
+	            try {
+	                Thread.sleep(1000);
+	            }
+	            catch (InterruptedException e)
+	            {
+	                e.printStackTrace();
+	            }
+	        }       
+	        else {
+	            System.out.println(name
+	                               + " you can not withdraw "
+	                               + withdrawal);
+	            System.out.println("your balance is: " + total);	 	            
+	            try {
+	                 
+	                Thread.sleep(1000);
+	            }	            
+	            catch (InterruptedException e) 
+	            {
+	                e.printStackTrace();
+	            }
+	        }
+	    }	    
+}
+
+package Thread;
+
+public class Demo2  extends Thread 
+{ 
+	Demo1 object;
+    String name;
+    int dollar;
+ 
+    Demo2(Demo1 ob, String name, int money)
+    {    
+        this.object = ob;
+        this.name = name;
+        this.dollar = money;
+    }
+    public void run()
+    { 
+    	object.Demo2(name, dollar); 
+    }
+}
+  
+
+package Thread;
+
+public class Demo3
+{
+	public static void main(String[] args)
+    {      
+		// TODO Auto-generated method stub
+		Demo1 obj = new Demo1();
+		Demo2 t1
+            = new Demo2(obj, "User1", 20);
+		Demo2 t2
+            = new Demo2(obj, "User2", 40);      
+		Demo2 t3
+            = new Demo2(obj, "User3", 80);
+		Demo2 t4
+            = new Demo2(obj, "User4", 40);
+ 
+        t1.start();
+        t2.start();     
+        t3.start();
+        t4.start();
+    }
+}
+
+
+ 
+
