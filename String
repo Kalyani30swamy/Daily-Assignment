@@ -1,0 +1,43 @@
+package Inheritance;
+
+public class String_demo
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		function_1();
+		function_2();
+		
+	}
+	public static void function_1()
+	{
+		String frist_string = "Hello Kalyani";
+	    System.out.println("String: " + frist_string);
+	    String second_string = " Welcome Here";
+	    int length =frist_string.length();
+	    System.out.println("Length: " + length);
+	    String joinedString = frist_string.concat(second_string);
+	    System.out.println("Joined String: " + joinedString);
+	    boolean result = second_string.contains("Java");
+	    System.out.println(result);
+	    boolean result1 = second_string.contains("Welcome");
+	    System.out.println(result1);
+	    result = frist_string.indexOf('s');
+	    System.out.println(result);
+	    System.out.print("\n");
+	}
+	public static void function_2()
+	{
+		StringBuffer str = new StringBuffer("Kalyani");
+		str.append(123);	//add 123 in kalyani
+		System.out.println(str);
+		str.insert(2, 456); 	//add 456 after 2 characters
+		System.out.println(str);
+		str.reverse();  		// reverse full string
+		System.out.println(str);
+		System.out.println(str.charAt(6));
+		
+		
+	}
+}
