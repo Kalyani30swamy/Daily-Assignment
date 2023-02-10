@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>WELCOME TO MY PAGE</title>
+		<script>
+			/*
+			var num1=50;
+			var num2=60;
+			var add=num1+num2;
+			document.write("The add is ="+add);
+			*/
+			
+			function demo()
+			{
+				var num1=parseInt(document.getElementById("n1").value);
+				
+				var num2=parseInt(document.getElementById("n2").value);
+				
+				var sum=num1+num2;
+				
+				document.getElementById("ans").innerHTML=sum;
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1>ADD YOUR TWO NUMBERS HERE</h1>
+		<form>
+		<label>Enter your first number </label>
+			<input type="text" id="n1" />
+			
+		<label>Enter your second number </label>
+			<input type="text" id="n2" />
+			
+			<input type="button" onclick="demo()" value="ADD" />
+		
+		<p>The Addition is =<span id="ans"> ?</span></p>
+		
+		</form>
+	</body>
+	
+</html>
